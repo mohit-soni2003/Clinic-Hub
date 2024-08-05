@@ -1,0 +1,42 @@
+
+.home-page-1-container{
+    border:1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.home-page-1-item1{
+    height: 100vh;
+    width: 60%;
+    border: 1px solid red;
+}
+.home-page-line1{
+    font-size:2.7rem;
+}
+.home-page-line2{
+    font-size: 1.8rem;
+}
+.home-page-feature-container{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.home-page-feature img{
+    width: 100px;
+}
+
+
+
+
+/* ---------------------------------ITEM 2 OF RIGHT SIDE------------------------------- */
+.home-page-1-item2{
+    border: 1px solid green;
+    width: 30%;
+    margin-right: 3%;
+}
+.home-page-1-item2 img{
+    width: 100%;
+}
+
