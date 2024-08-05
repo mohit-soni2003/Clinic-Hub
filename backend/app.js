@@ -3,7 +3,7 @@ const app=express();
 const port = 5000;
 
 app.get("/",(req,res)=>{
-    res.send("Its Default Route of Testing")
+    res.json({Message : "Server IS Working Correctly "})
 })
 
 
