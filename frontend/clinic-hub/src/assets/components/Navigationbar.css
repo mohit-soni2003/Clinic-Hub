@@ -1,0 +1,10 @@
+.auth-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 5% 0px 0px;
+}
+
+.auth-btn{
+    margin: 0px 5%;
+}

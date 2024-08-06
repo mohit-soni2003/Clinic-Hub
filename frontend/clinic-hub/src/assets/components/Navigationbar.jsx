@@ -1,17 +1,19 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
+import "./Navigationbar.css"
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import logo from "../img/logo.png"
 
 export default function Navigationbar() {
   return (
-    <div className='navigation-bar'>
+    <div className='navigation-bar' style={{backgroundColor:"#d4d4d4"}}>
        <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="#" style={{color:"#2a5da8", fontWeight:"600" , fontSize:"1.8rem" , textShadow:"1px 1px 2px #a6eded"}}><img style={{width:"50px"}} src={logo} alt="" /> ClinicHub</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -20,7 +22,10 @@ export default function Navigationbar() {
             navbarScroll
           >
             <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
+            <Nav.Link href="#action2">AboutUs</Nav.Link>
+            <Nav.Link href="#action2">Pharmacy</Nav.Link>
+            <Nav.Link href="#action2">LabTests</Nav.Link>
+            <Nav.Link href="#action2">Reports</Nav.Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
@@ -35,15 +40,11 @@ export default function Navigationbar() {
               Link
             </Nav.Link>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+            <div className="auth-container">
+            <Button variant="outline-primary auth-btn">Login</Button>
+            <Button variant="outline-primary auth-btn">Register</Button>
+            </div>
+
         </Navbar.Collapse>
       </Container>
     </Navbar>
