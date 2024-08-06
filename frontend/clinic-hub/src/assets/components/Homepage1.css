@@ -1,40 +1,63 @@
 
 .home-page-1-container{
-    border:1px solid black;
+    border:0px solid black;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    height: 100vh;
+    background-color: rgb(229, 248, 255);
 }
 
 .home-page-1-item1{
-    height: 100vh;
-    width: 60%;
-    border: 1px solid red;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 5% 0px 0px 5%;
+     width: 55%;
+    border: 0px solid red;
+    padding: 5px;
 }
 .home-page-line1{
-    font-size:2.7rem;
+    font-size:3.3rem;
+    font-weight:600;
+    color: rgb(0, 88, 211);
+    margin: 5px 0px;
 }
 .home-page-line2{
+    color: rgb(0, 88, 211);
+    font-weight: 400;
     font-size: 1.8rem;
+    margin: 5px 0px;
 }
-.home-page-feature-container{
+.home-page-1-feature-container{
+    margin: 10px 0px;
+    border: 0px solid rgb(78, 206, 9);
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     flex-wrap: nowrap;
 }
+.home-page-feature{
+    margin: 10px;
+}
 .home-page-feature img{
+    border: 2px solid rgb(0, 117, 226);
+    border-radius: 20px;
+    height: 100px;
     width: 100px;
 }
 
+.hm-pg-feature-name{
+    font-weight: bold;
+}
 
 
 
 /* ---------------------------------ITEM 2 OF RIGHT SIDE------------------------------- */
 .home-page-1-item2{
-    border: 1px solid green;
-    width: 30%;
-    margin-right: 3%;
+    border: 0px solid green;
+    width:  35%;
+    margin: 2% 3% 0px 0px;
 }
 .home-page-1-item2 img{
     width: 100%;

@@ -1,0 +1,40 @@
+.home-page2-services{
+    margin: 5% 0px;
+}
+
+.service img{
+    width: 160px;
+    height: 160px;
+}
+td {
+ border: none;
+}
+tr{
+    border: none;
+}
+.service{
+    margin: 10px;
+    background-color: rgb(222, 242, 255);
+    border-radius: 20px;
+    width: 13vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.service-name{
+    font-weight: bold;
+    padding: 5% 0px;
+}
+.special-service{
+    border: 0px solid red;
+    width: 29vw;
+    padding: 5%;
+}
+.service-l1{
+    font-size: 2rem;
+    color: rgb(4, 158, 214);
+}
+.service-l2{
+    font-size: 1.1rem;
+}
