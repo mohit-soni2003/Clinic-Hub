@@ -1,0 +1,42 @@
+
+.search-field-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: 22vh;
+    background-color: rgb(229, 248, 255);
+}
+.bg-white{
+    background-color: white;
+}
+
+.fields{
+    width: 20%;
+}
+.fields ::placeholder{
+    font-size:1.2rem;
+    color:#0271d9;
+    font-weight:bold;
+    border: none;
+}
+.fields input:focus {
+    outline: none; /* Removes default outline */
+    border: none; /* Removes border */
+}
+
+.search-fields-heading{
+    background-color: white;
+    text-align: center;
+    color: gray;
+}
+
+.temp1{
+    height: 10vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0px solid red;
+    width: 20%;
+}

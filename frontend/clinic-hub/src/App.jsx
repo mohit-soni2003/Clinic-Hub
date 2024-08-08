@@ -7,6 +7,8 @@ import Navigationbar from './assets/components/Navigationbar';
 import HomePage from './assets/components/HomePage';
 import Signup from "./assets/components/Signup"
 import Signin from "./assets/components/Signin"
+import SearchContainer from "./assets/components/Searchcontainer"
+import SearchPharmacyResult from './assets/components/SearchPharmacyResult';
 
 function App() {
     return (
@@ -22,6 +24,15 @@ function App() {
             <div className="temp-display" style={{border : "0px solid red"}}>
                 <Signin></Signin>
             </div>
+            <Navigationbar></Navigationbar>
+            <div className="temp-display" style={{border : "0px solid red"}}>
+                <SearchContainer></SearchContainer>
+            </div>
+            <Navigationbar></Navigationbar>
+            <div className="temp-display" style={{border : "0px solid red"}}>
+            <SearchPharmacyResult></SearchPharmacyResult>
+            </div>
+
         </>
     )
 }

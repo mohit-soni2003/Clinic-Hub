@@ -1,0 +1,87 @@
+.pharmacy-result-container {
+    border: 0px solid #ff0000;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.pharmacy-result-item1 {
+    width: 55%;
+    border: 0px solid rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.pharmacy-result-item2 {
+    width: 35%;
+    border: 1px solid rgb(47, 203, 255);
+    padding: 1%;
+    margin: 10% 0px;
+}
+.pharmacy-result-item2 img{
+        width: 100%;
+        height: 100%;
+}
+
+/* ---------------item1------------------------------------- */
+.pharmacy-result-card{
+    border: 0px solid rgb(115, 255, 0);
+    background-color: rgb(233, 246, 253);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 3% 0px;
+}
+.pharma-logo{
+    width: 120px;
+    height :120px;
+    margin: 0px 0px 0px 3%;
+
+}
+.pharma-logo img{
+    width: 100%;
+    height: 100%;
+}
+.pharma-content{
+    border: 0px solid red;
+    width: 70%;
+    margin: 3px 2%;
+}
+.pharma-name{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.opening-time{
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 1% 0px;
+}
+.feature-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.pharma-feature{
+    margin: 1% 1%;
+    border: 1px solid red;
+    padding: 3px;
+}
+.offer-view-container{
+    display: flex;
+    margin: 3% 0px;
+    align-items: center;
+    justify-content: space-between;
+}
+.pharma-offer{
+    font-size: 1.2rem;
+    border: 1px solid red;
+    padding: 3px;
+}
