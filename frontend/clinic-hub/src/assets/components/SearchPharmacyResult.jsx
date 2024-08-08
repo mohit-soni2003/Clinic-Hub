@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 import "./SearchPharmacyResult.css"
 import logo from "../img/logo.png"
+import image from "../img/image.png"
 import map from "../img/map.png"
 //---------tihs imports for search container-------------
 import Form from 'react-bootstrap/Form';
@@ -43,42 +44,121 @@ export default function SearchPharmacyResult() {
                 city: city
             })
         })
-        .then(res => res.json())
-        .then(result => {
-            console.log(result);  // Log the result to check its structure
-            if (Array.isArray(result)) {
-                setdata(result);
-            } else {
-                console.error("Expected an array but got:", result);
-                setdata([]);  // Set to an empty array if result is not an array
-            }
-        })
-        .catch(err => console.log(err));
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);  // Log the result to check its structure
+                if (Array.isArray(result)) {
+                    setdata(result);
+                } else {
+                    console.error("Expected an array but got:", result);
+                    setdata([]);  // Set to an empty array if result is not an array
+                }
+            })
+            .catch(err => console.log(err));
     }
-    
 
-const searchResultRender = ()=>{
-    if(servicetype=="pharmacy"){
-        return (
-           <><div style={{fontSize:"40px"}}>Pharmacy</div></>
-        )
+
+    const searchResultRender = () => {
+        if (servicetype == "pharmacy") {
+            return (
+                <>
+                    <div style={{ fontSize: "40px" }}>Pharmacy</div>
+                    <div className="search-pharmacy-result">
+                        <div className="display-pharmacy-filter"></div>
+                        <div className="pharmacy-result-container">
+                            {/* ----------- --------- ------------item1 of cards of pharma ---------------------------- */}
+
+
+                            <div className="pharmacy-result-item1">
+                                {console.log(data)}
+                                {data.map((pharmastore) => {
+                                    return (
+                                        <div className="pharmacy-result-card">
+                                            <div className="pharma-logo"><img src={logo} alt="" /></div>
+                                            <div className="pharma-content">
+                                                <div className="pharma-name">{pharmastore.name}</div>
+                                                <div className="opening-time">Mon - Sat {pharmastore.openingTime}AM - {pharmastore.closingTime}PM</div>
+                                                <div className="feature-container">
+                                                    <div className="pharma-feature" id='f1'>Free home delievery</div>
+                                                    <div className="pharma-feature" id='f2'>Paymant modes</div>
+                                                    <div className="pharma-feature" id='f3'>Instant Delievery</div>
+                                                </div>
+                                                <div className="offer-view-container">
+                                                    <div className="pharma-offer">10%</div>
+                                                    <div className="view-detail-btn"><Button className="Primary">View Details</Button></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+
+
+                            {/* ----------- --------- ------------item2 of cards of map location ---------------------------- */}
+                            <div className="pharmacy-result-item2">    {data.length > 0 && <img src={map} alt="Map" />}
+                            </div>
+
+                        </div>
+                    </div>
+                </>
+            )
+        }
+        else if (servicetype == "doctor") {
+            return (
+                <>
+                    <div style={{ fontSize: "40px" }}>Doctor</div>
+                    <div className="search-pharmacy-result">
+                        <div className="display-pharmacy-filter"></div>
+                        <div className="pharmacy-result-container">
+                            {/* ----------- --------- ------------item1 of cards of pharma ---------------------------- */}
+
+                            <div className="pharmacy-result-item1">
+                                {console.log(data)}
+                                {data.map((pharmastore) => {
+                                    return (
+                                        <div className="pharmacy-result-card">
+                                            <div className="pharma-logo"><img src={image} alt="" /></div>
+                                            <div className="pharma-content">
+                                                <div className="pharma-name">{pharmastore.name}</div>
+                                                <div className="opening-time">Mon - Sat {pharmastore.openingTime}AM - {pharmastore.closingTime}PM</div>
+                                                <div className="feature-container">
+                                                    <div className="pharma-feature" id='f1'>Free home delievery</div>
+                                                    <div className="pharma-feature" id='f2'>Paymant modes</div>
+                                                    <div className="pharma-feature" id='f3'>Instant Delievery</div>
+                                                </div>
+                                                <div className="offer-view-container">
+                                                    <div className="pharma-offer">10%</div>
+                                                    <div className="view-detail-btn"><Button className="Primary">View Details</Button></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+
+
+                            {/* ----------- --------- ------------item2 of cards of map location ---------------------------- */}
+                            <div className="pharmacy-result-item2">    {data.length > 0 && <img src={map} alt="Map" />}
+                            </div>
+
+                        </div>
+                    </div>
+                </>
+            )
+        }
+        else if (servicetype == "hospital") {
+            return (
+                <><div style={{ fontSize: "40px" }}>Hospital</div></>
+            )
+        }
+        else if (servicetype == "clinic") {
+            return (
+                <><div style={{ fontSize: "40px" }}>Clinic</div></>
+            )
+        }
     }
-    else if(servicetype=="clinic"){
-        return(
-            <><div style={{fontSize:"40px"}}>Clinic</div></>
-        )
-    }
-    else if(servicetype=="hospital"){
-        return(
-            <><div style={{fontSize:"40px"}}>Hospital</div></>
-        )
-    }
-    else if(servicetype=="doctor"){
-        return(
-            <><div style={{fontSize:"40px"}}>Doctor</div></>
-        )
-    }
-}
 
     return (
         <>
@@ -88,7 +168,7 @@ const searchResultRender = ()=>{
                     <div className="fields" >
                         <div className='search-fields-heading'>select city</div>
                         <Form.Select aria-label="Select Your City" onChange={handlecitychange} style={{ border: "none", textAlign: "center", fontSize: "1.2rem", color: "#086bc7", fontWeight: "bold" }}>
-                            <option>select your city</option>
+                            <option value="select your city">select your city</option>
                             <option value="Indore">Indore </option>
                             <option value="Ujjain">Ujjain</option>
                             <option value="Jabalpur">Jabalpur</option>
@@ -117,45 +197,6 @@ const searchResultRender = ()=>{
             </div>
             {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
             {searchResultRender()}
-            <div className="search-pharmacy-result">
-                <div className="display-pharmacy-filter"></div>
-                <div className="pharmacy-result-container">
-                    {/* ----------- --------- ------------item1 of cards of pharma ---------------------------- */}
-
-
-                    <div className="pharmacy-result-item1">
-                        {console.log(data)}
-                        {data.map((pharmastore) => {
-                            return (
-                                <div className="pharmacy-result-card">
-                                    <div className="pharma-logo"><img src={logo} alt="" /></div>
-                                    <div className="pharma-content">
-                                        <div className="pharma-name">{pharmastore.name}</div>
-                                        <div className="opening-time">Mon - Sat {pharmastore.openingTime}AM - {pharmastore.closingTime}PM</div>
-                                        <div className="feature-container">
-                                            <div className="pharma-feature" id='f1'>Free home delievery</div>
-                                            <div className="pharma-feature" id='f2'>Paymant modes</div>
-                                            <div className="pharma-feature" id='f3'>Instant Delievery</div>
-                                        </div>
-                                        <div className="offer-view-container">
-                                            <div className="pharma-offer">10%</div>
-                                            <div className="view-detail-btn"><Button className="Primary">View Details</Button></div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            )
-                        })}
-                    </div>
-
-
-                    {/* ----------- --------- ------------item2 of cards of map location ---------------------------- */}
-                    <div className="pharmacy-result-item2">    {data.length > 0 && <img src={map} alt="Map" />}
-                    </div>
-
-                </div>
-            </div>
-
         </>
     )
 }

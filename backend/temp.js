@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const PharmacyStore = require('./models/pharmacy');
+const Doctor = require('./models/doctor');
 const url = "mongodb+srv://2mohitsoni:Mohit1234@cluster0.wjfspkb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -8,118 +9,69 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 
         const stores = [
             {
-                name: "HealthPlus Pharmacy",
-                logoLink: "http://example.com/logo1.png",
-                address: "123 Main St, Indore, India",
-                city: "Indore",
-                openingTime: "08:00",
-                closingTime: "22:00",
-                paymentModesAccepted: ["Cash", "Online"],
-                deliveryType: "Instant",
-                isOpen24Hours: false
+                name: "Dr. John Doe",
+                image: "https://www.shutterstock.com/image-photo/profile-photo-attractive-family-doc-600nw-1724693776.jpg",
+                qualification: "MBBS, MD",
+                fees: "500",
+                status: "available",
+                speciality: "Cardiologist",
+                gender: "male",
+                experience: "10 years",
+                rating: true,
+                city: "Indore"
             },
             {
-                name: "Wellness Pharmacy",
-                logoLink: "http://example.com/logo2.png",
-                address: "456 Maple Ave, Ujjain, India",
-                city: "Ujjain",
-                openingTime: "09:00",
-                closingTime: "21:00",
-                paymentModesAccepted: ["Cash"],
-                deliveryType: "Normal",
-                isOpen24Hours: true
+                name: "Dr. Jane Smith",
+                image: "https://www.shutterstock.com/image-photo/profile-photo-attractive-family-doc-600nw-1724693776.jpg",
+                qualification: "MBBS, MS",
+                fees: "700",
+                status: "available",
+                speciality: "Neurologist",
+                gender: "female",
+                experience: "12 years",
+                rating: true,
+                city: "Ujjain"
             },
             {
-                name: "Family Health Pharmacy",
-                logoLink: "http://example.com/logo3.png",
-                address: "789 Oak St, Bhopal, India",
-                city: "Bhopal",
-                openingTime: "07:00",
-                closingTime: "23:00",
-                paymentModesAccepted: ["Online"],
-                deliveryType: "Instant",
-                isOpen24Hours: false
+                name: "Dr. Emily White",
+                image: "https://www.shutterstock.com/image-photo/profile-photo-attractive-family-doc-600nw-1724693776.jpg",
+                qualification: "MBBS, DGO",
+                fees: "400",
+                status: "unavailable",
+                speciality: "Gynecologist",
+                gender: "female",
+                experience: "8 years",
+                rating: true,
+                city: "Bhopal"
             },
             {
-                name: "CareFirst Pharmacy",
-                logoLink: "http://example.com/logo4.png",
-                address: "101 Pine St, Jabalpur, India",
-                city: "Jabalpur",
-                openingTime: "10:00",
-                closingTime: "20:00",
-                paymentModesAccepted: ["Cash", "Online"],
-                deliveryType: "Normal",
-                isOpen24Hours: true
+                name: "Dr. Robert Brown",
+                image: "https://www.shutterstock.com/image-photo/profile-photo-attractive-family-doc-600nw-1724693776.jpg",
+                qualification: "MBBS, MCh",
+                fees: "600",
+                status: "available",
+                speciality: "Orthopedic Surgeon",
+                gender: "male",
+                experience: "15 years",
+                rating: true,
+                city: "Jabalpur"
             },
             {
-                name: "Healthy Life Pharmacy",
-                logoLink: "http://example.com/logo5.png",
-                address: "202 Birch St, Indore, India",
-                city: "Indore",
-                openingTime: "08:00",
-                closingTime: "22:00",
-                paymentModesAccepted: ["Cash", "Online"],
-                deliveryType: "Instant",
-                isOpen24Hours: false
-            },
-            {
-                name: "PharmaCare",
-                logoLink: "http://example.com/logo6.png",
-                address: "303 Cedar St, Ujjain, India",
-                city: "Ujjain",
-                openingTime: "09:00",
-                closingTime: "21:00",
-                paymentModesAccepted: ["Cash"],
-                deliveryType: "Normal",
-                isOpen24Hours: true
-            },
-            {
-                name: "Trust Pharmacy",
-                logoLink: "http://example.com/logo7.png",
-                address: "404 Elm St, Bhopal, India",
-                city: "Bhopal",
-                openingTime: "07:00",
-                closingTime: "23:00",
-                paymentModesAccepted: ["Online"],
-                deliveryType: "Instant",
-                isOpen24Hours: false
-            },
-            {
-                name: "QuickMed Pharmacy",
-                logoLink: "http://example.com/logo8.png",
-                address: "505 Spruce St, Jabalpur, India",
-                city: "Jabalpur",
-                openingTime: "10:00",
-                closingTime: "20:00",
-                paymentModesAccepted: ["Cash", "Online"],
-                deliveryType: "Normal",
-                isOpen24Hours: true
-            },
-            {
-                name: "Neighborhood Pharmacy",
-                logoLink: "http://example.com/logo9.png",
-                address: "606 Willow St, Indore, India",
-                city: "Indore",
-                openingTime: "08:00",
-                closingTime: "22:00",
-                paymentModesAccepted: ["Cash", "Online"],
-                deliveryType: "Instant",
-                isOpen24Hours: false
-            },
-            {
-                name: "City Health Pharmacy",
-                logoLink: "http://example.com/logo10.png",
-                address: "707 Fir St, Ujjain, India",
-                city: "Ujjain",
-                openingTime: "09:00",
-                closingTime: "21:00",
-                paymentModesAccepted: ["Cash"],
-                deliveryType: "Normal",
-                isOpen24Hours: true
+                name: "Dr. Alex Green",
+                image: "https://www.shutterstock.com/image-photo/profile-photo-attractive-family-doc-600nw-1724693776.jpg",
+                qualification: "MBBS, MD",
+                fees: "450",
+                status: "available",
+                speciality: "Pediatrician",
+                gender: "other",
+                experience: "10 years",
+                rating: false, 
+                city: "Indore"
             }
-        ];
+        ]
+        ;
 
-        return PharmacyStore.insertMany(stores);
+        return Doctor.insertMany(stores);
     })
     .then(stores => {
         console.log("Stores Saved:", stores);
