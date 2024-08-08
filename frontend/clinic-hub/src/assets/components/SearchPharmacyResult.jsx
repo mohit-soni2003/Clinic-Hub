@@ -33,7 +33,8 @@ export default function SearchPharmacyResult() {
     // ----------------------post data to server to search -------------------
 
     const searchpost = () => {
-        fetch("http://localhost:5000/search", {
+        // fetch("http://localhost:5000/search", {
+        fetch("https://clinic-hub-server.vercel.app/search", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
