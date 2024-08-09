@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 import "./SearchPharmacyResult.css"
 import logo from "../img/logo.png"
+import 'bootstrap/dist/css/bootstrap.min.css';
 import image from "../img/image.png"
 import map from "../img/map.png"
 //---------tihs imports for search container-------------
@@ -15,7 +16,7 @@ export default function SearchPharmacyResult() {
     //--------this is search container -----------------
     // -------------handle search variable and onchange function------------
     const [city, setcity] = useState()
-    const [servicetype, setservicetype] = useState()
+    const [servicetype, setservicetype] = useState("select your city")
     const [name, setname] = useState()
     const [data, setdata] = useState([])
     const handlecitychange = (event) => {
@@ -33,8 +34,8 @@ export default function SearchPharmacyResult() {
     // ----------------------post data to server to search -------------------
 
     const searchpost = () => {
-        // fetch("http://localhost:5000/search", {
-        fetch("https://clinic-hub-server.vercel.app/search", {
+        fetch("http://localhost:5000/search", {
+            // fetch("https://clinic-hub-server.vercel.app/search", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -116,24 +117,27 @@ export default function SearchPharmacyResult() {
 
                             <div className="pharmacy-result-item1">
                                 {console.log(data)}
-                                {data.map((pharmastore) => {
+                                {data.map((doctor) => {
                                     return (
                                         <div className="pharmacy-result-card">
-                                            <div className="pharma-logo"><img src={image} alt="" /></div>
-                                            <div className="pharma-content">
-                                                <div className="pharma-name">{pharmastore.name}</div>
-                                                <div className="opening-time">Mon - Sat {pharmastore.openingTime}AM - {pharmastore.closingTime}PM</div>
-                                                <div className="feature-container">
-                                                    <div className="pharma-feature" id='f1'>Free home delievery</div>
-                                                    <div className="pharma-feature" id='f2'>Paymant modes</div>
-                                                    <div className="pharma-feature" id='f3'>Instant Delievery</div>
+                                            <div className="pharma-logo">
+                                                <img src={doctor.image} alt="" />
+                                                <div className="expierence">
+                                                    {doctor.experience}
                                                 </div>
-                                                <div className="offer-view-container">
-                                                    <div className="pharma-offer">10%</div>
-                                                    <div className="view-detail-btn"><Button className="Primary">View Details</Button></div>
-                                                </div>
-
                                             </div>
+                                            <div className="pharma-content">
+                                                <div className="pharma-name">{doctor.name}</div>
+                                                <div className="opening-time">{doctor.qualification}</div>
+                                                <div className="doctor-speciality" id='f1'>{doctor.speciality}</div>
+                                                <div className="doctor-fees">200$</div>
+                                            </div>
+                                            <div className="doctor-btn-container">
+                                            <i class="bi bi-share share-icon"></i>
+                                                <Button variant="outline-primary bk-apt">Chat Now</Button>
+                                                <Button className='primary bk-apt'>Book Appointment</Button>
+                                                <div className="doctor-status">Status : <span style={{color : "blue"}}>{doctor.status}</span></div>
+                                                </div>
                                         </div>
                                     )
                                 })}
@@ -141,7 +145,7 @@ export default function SearchPharmacyResult() {
 
 
                             {/* ----------- --------- ------------item2 of cards of map location ---------------------------- */}
-                            <div className="pharmacy-result-item2">    {data.length > 0 && <img src={map} alt="Map" />}
+                            <div className="pharmacy-result-item2">{data.length > 0 && <img src={map} alt="Map" />}
                             </div>
 
                         </div>

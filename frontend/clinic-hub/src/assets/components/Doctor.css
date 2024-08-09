@@ -1,0 +1,144 @@
+/* Doctor.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.col-left {
+    flex: 0 0 65%;
+}
+
+.col-right {
+    flex: 0 0 30%;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+/* Doctor Info Section */
+.doctor-info {
+    display: flex;
+    align-items: center;
+}
+
+.doctor-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.doctor-details {
+    margin-left: 20px;
+}
+
+.doctor-details h4 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.doctor-details p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Location Section */
+.location-info h5 {
+    font-size: 20px;
+    color: #333;
+}
+
+.map-image {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.location-info p {
+    margin: 10px 0;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Appointment Booking Section */
+.booking-info h5 {
+    font-size: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input[type="radio"] {
+    margin-right: 10px;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #555;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Profile Section */
+.profile-info h5 {
+    font-size: 20px;
+    color: #333;
+}
+
+.profile-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.profile-info ul li {
+    margin: 5px 0;
+    color: #555;
+}
+
+.profile-info ul li::before {
+    content: "•";
+    color: #007bff;
+    font-size: 20px;
+    display: inline-block;
+    width: 20px;
+    margin-left: -20px;
+}
