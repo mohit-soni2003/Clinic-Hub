@@ -2,10 +2,13 @@ import React from 'react';
 import { Container, Row, Col, Card, Button, Image, ListGroup, Form } from 'react-bootstrap';
 import image from "../img/image.png"
 import map from "../img/map.png"
+import Navigationbar from './Navigationbar';
 
 
 export default  function Doctor()  {
     return (
+    <>
+    <Navigationbar></Navigationbar>
         <Container className="my-5">
             <Row>
                 <Col md={8} >
@@ -119,5 +122,6 @@ export default  function Doctor()  {
                 </Col>
             </Row>
         </Container>
+    </>
     );
 }

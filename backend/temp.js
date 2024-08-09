@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const PharmacyStore = require('./models/pharmacy');
 const Doctor = require('./models/doctor');
+const Clinic = require('./models/clinic');
 const url = "mongodb+srv://2mohitsoni:Mohit1234@cluster0.wjfspkb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -9,69 +10,99 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 
         const stores = [
             {
-                name: "Dr. John Doe",
-                image: "https://www.shutterstock.com/image-photo/profile-photo-attractive-family-doc-600nw-1724693776.jpg",
-                qualification: "MBBS, MD",
-                fees: "500",
-                status: "available",
-                speciality: "Cardiologist",
-                gender: "male",
-                experience: "10 years",
-                rating: true,
-                city: "Indore"
+                name: "Sunshine Clinic",
+                doctorpresent: "66b5005952956c7d972117cd",
+                image: "https://bsmedia.business-standard.com/_media/bs/img/article/2015-07/03/full/1435926739-5814.jpg",
+                status: "Open",
+                city: "Indore",
+                rating: "4.5",
+                waiting: 15
             },
             {
-                name: "Dr. Jane Smith",
-                image: "https://www.shutterstock.com/image-photo/profile-photo-attractive-family-doc-600nw-1724693776.jpg",
-                qualification: "MBBS, MS",
-                fees: "700",
-                status: "available",
-                speciality: "Neurologist",
-                gender: "female",
-                experience: "12 years",
-                rating: true,
-                city: "Ujjain"
+                name: "HealthCare Center",
+                doctorpresent: "66b5005952956c7d972117cb",
+                image: "https://bsmedia.business-standard.com/_media/bs/img/article/2015-07/03/full/1435926739-5814.jpg",
+                status: "Closed",
+                city: "Bhopal",
+                rating: "4.2",
+                waiting: 30
             },
             {
-                name: "Dr. Emily White",
-                image: "https://www.shutterstock.com/image-photo/profile-photo-attractive-family-doc-600nw-1724693776.jpg",
-                qualification: "MBBS, DGO",
-                fees: "400",
-                status: "unavailable",
-                speciality: "Gynecologist",
-                gender: "female",
-                experience: "8 years",
-                rating: true,
-                city: "Bhopal"
+                name: "City Medical Clinic",
+                doctorpresent: "66b5005952956c7d972117c9",
+                image: "https://bsmedia.business-standard.com/_media/bs/img/article/2015-07/03/full/1435926739-5814.jpg",
+                status: "Open",
+                city: "Pune",
+                rating: "4.7",
+                waiting: 10
             },
             {
-                name: "Dr. Robert Brown",
-                image: "https://www.shutterstock.com/image-photo/profile-photo-attractive-family-doc-600nw-1724693776.jpg",
-                qualification: "MBBS, MCh",
-                fees: "600",
-                status: "available",
-                speciality: "Orthopedic Surgeon",
-                gender: "male",
-                experience: "15 years",
-                rating: true,
-                city: "Jabalpur"
+                name: "Healing Hands Clinic",
+                doctorpresent: "66b5005952956c7d972117ca",
+                image: "https://bsmedia.business-standard.com/_media/bs/img/article/2015-07/03/full/1435926739-5814.jpg",
+                status: "Open",
+                city: "Mumbai",
+                rating: "4.8",
+                waiting: 5
             },
             {
-                name: "Dr. Alex Green",
-                image: "https://www.shutterstock.com/image-photo/profile-photo-attractive-family-doc-600nw-1724693776.jpg",
-                qualification: "MBBS, MD",
-                fees: "450",
-                status: "available",
-                speciality: "Pediatrician",
-                gender: "other",
-                experience: "10 years",
-                rating: false, 
-                city: "Indore"
+                name: "Carewell Clinic",
+                doctorpresent: "66b5005bd3ab44a1fa497922",
+                image: "https://bsmedia.business-standard.com/_media/bs/img/article/2015-07/03/full/1435926739-5814.jpg",
+                status: "Closed",
+                city: "Delhi",
+                rating: "4.3",
+                waiting: 25
+            },
+            {
+                name: "Family Health Clinic",
+                doctorpresent: "66b5005bd3ab44a1fa497920",
+                image: "https://bsmedia.business-standard.com/_media/bs/img/article/2015-07/03/full/1435926739-5814.jpg",
+                status: "Open",
+                city: "Kolkata",
+                rating: "4.6",
+                waiting: 20
+            },
+            {
+                name: "MediCare Clinic",
+                doctorpresent: "66b5005bd3ab44a1fa497924",
+                image: "https://bsmedia.business-standard.com/_media/bs/img/article/2015-07/03/full/1435926739-5814.jpg",
+                status: "Closed",
+                city: "Chennai",
+                rating: "4.4",
+                waiting: 18
+            },
+            {
+                name: "HealthyLife Clinic",
+                doctorpresent: "66b5005bd3ab44a1fa497921",
+                image: "https://bsmedia.business-standard.com/_media/bs/img/article/2015-07/03/full/1435926739-5814.jpg",
+                status: "Open",
+                city: "Hyderabad",
+                rating: "4.9",
+                waiting: 8
+            },
+            {
+                name: "Wellness Clinic",
+                doctorpresent: "66b5005bd3ab44a1fa497923",
+                image: "https://bsmedia.business-standard.com/_media/bs/img/article/2015-07/03/full/1435926739-5814.jpg",
+                status: "Closed",
+                city: "Bangalore",
+                rating: "4.1",
+                waiting: 12
+            },
+            {
+                name: "CureAll Clinic",
+                doctorpresent: "66b5005bd3ab44a1fa497923",
+                image: "https://bsmedia.business-standard.com/_media/bs/img/article/2015-07/03/full/1435926739-5814.jpg",
+                status: "Open",
+                city: "Ahmedabad",
+                rating: "4.7",
+                waiting: 22
             }
         ]
-        ;
+        
 
-        return Doctor.insertMany(stores);
+        return Clinic.insertMany(stores);
     })
     .then(stores => {
         console.log("Stores Saved:", stores);

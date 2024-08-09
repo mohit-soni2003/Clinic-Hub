@@ -2,6 +2,7 @@ const express = require("express")
 const mongoose = require("mongoose");
 const PharmacyStore = require("./models/pharmacy");
 const Doctor = require("./models/doctor");
+const Clinic = require("./models/clinic");
 const app = express();
 const port = 5000;
 const cors =require("cors")
@@ -28,7 +29,7 @@ app.post("/search", async (req, res) => {
     const { city, serviceType, name } = req.body
     console.log(req.body)
     try {
-        if (serviceType === 'pharmacy' && city==="select your city") {
+        if (serviceType === 'pharmacy' && !city) {
             const data = await PharmacyStore.find({})
             console.log("insearch 1 pharma without city")
             return res.json(data)
@@ -38,7 +39,7 @@ app.post("/search", async (req, res) => {
             console.log("insearch 2 pharma with city")
             return res.json(data)
         }
-        else if (serviceType == "doctor" && city=="select your city") {
+        else if (serviceType == "doctor" && !city) {
             const data = await Doctor.find({});
             console.log("insearch 1 doctor withot city")
             return res.json(data)
@@ -48,8 +49,18 @@ app.post("/search", async (req, res) => {
             console.log("insearch 2 doctor with city")
             return res.json(data)
         }
+        else if (serviceType == "clinic" && !city) {
+            const data = await Clinic.find({});
+            console.log("insearch 1 doctor withot city")
+            return res.json(data)
+        }
+        else if (serviceType == "clinic" && city) {
+            const data = await Clinic.find({city:city});
+            console.log("insearch 2 doctor with city")
+            return res.json(data)
+        }
         else{
-            return res.json("No data Found")
+            return res.json({message : "No Data Found"})
         }
     } catch (err) {
         console.log(err) 

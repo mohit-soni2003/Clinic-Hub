@@ -7,13 +7,16 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from "../img/logo.png"
+import {useNavigate} from "react-router-dom"
+
 
 export default function Navigationbar() {
+  const navigate = useNavigate()
   return (
     <div className='navigation-bar' style={{backgroundColor:"#d4d4d4"}}>
        <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#" style={{color:"#2a5da8", fontWeight:"600" , fontSize:"1.8rem" , textShadow:"1px 1px 2px #a6eded"}}><img style={{width:"50px"}} src={logo} alt="" /> ClinicHub</Navbar.Brand>
+        <Navbar.Brand  onClick={()=>navigate("/")} style={{color:"#2a5da8", fontWeight:"600" , fontSize:"1.8rem" , textShadow:"1px 1px 2px #a6eded"}}><img style={{width:"50px"}} src={logo} alt="" /> ClinicHub</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -21,9 +24,9 @@ export default function Navigationbar() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
+            <Nav.Link onClick={()=>navigate("/")}>Home</Nav.Link>
             <Nav.Link href="#action2">AboutUs</Nav.Link>
-            <Nav.Link href="#action2">Pharmacy</Nav.Link>
+            <Nav.Link  onClick={()=>navigate("/search")}>Pharmacy</Nav.Link>
             <Nav.Link href="#action2">LabTests</Nav.Link>
             <Nav.Link href="#action2">Reports</Nav.Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
@@ -41,8 +44,8 @@ export default function Navigationbar() {
             </Nav.Link>
           </Nav>
             <div className="auth-container">
-            <Button variant="outline-primary auth-btn">Login</Button>
-            <Button variant="outline-primary auth-btn">Register</Button>
+            <Button variant="outline-primary auth-btn" onClick={()=>navigate("/signin")}>Login</Button>
+            <Button variant="outline-primary auth-btn" onClick={()=>navigate("/signup")}>Register</Button>
             </div>
 
         </Navbar.Collapse>

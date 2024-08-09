@@ -3,12 +3,12 @@ import signupimage from "../img/signup.png"
 import "./signup.css"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-
+import Navigationbar from './Navigationbar';
 export default function Signup() {
   return (
     <>
+    <Navigationbar></Navigationbar>
     <div className="signup-container">
-
         {/* -----------------------item1------------------------- */}
         <div className="signup-item1">
             <div className="signup-l1">The Next Generation</div>

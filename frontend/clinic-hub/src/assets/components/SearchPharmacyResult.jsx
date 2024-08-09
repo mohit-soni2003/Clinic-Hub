@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from 'react'
+import Navigationbar from './Navigationbar';
 import Button from 'react-bootstrap/Button';
 import "./SearchPharmacyResult.css"
 import logo from "../img/logo.png"
@@ -8,15 +9,15 @@ import map from "../img/map.png"
 //---------tihs imports for search container-------------
 import Form from 'react-bootstrap/Form';
 import "./Searchcontainer.css"
-
-
 import "./Searchcontainer.css"
-export default function SearchPharmacyResult() {
+import { useNavigate } from "react-router-dom"
 
+export default function SearchPharmacyResult() {
+    const navigate = useNavigate()
     //--------this is search container -----------------
     // -------------handle search variable and onchange function------------
     const [city, setcity] = useState()
-    const [servicetype, setservicetype] = useState("select your city")
+    const [servicetype, setservicetype] = useState()
     const [name, setname] = useState()
     const [data, setdata] = useState([])
     const handlecitychange = (event) => {
@@ -133,11 +134,11 @@ export default function SearchPharmacyResult() {
                                                 <div className="doctor-fees">200$</div>
                                             </div>
                                             <div className="doctor-btn-container">
-                                            <i class="bi bi-share share-icon"></i>
+                                                <i class="bi bi-share share-icon"></i>
                                                 <Button variant="outline-primary bk-apt">Chat Now</Button>
-                                                <Button className='primary bk-apt'>Book Appointment</Button>
-                                                <div className="doctor-status">Status : <span style={{color : "blue"}}>{doctor.status}</span></div>
-                                                </div>
+                                                <Button onClick={() => navigate("/doctor")} className='primary bk-apt'>Book Appointment</Button>
+                                                <div className="doctor-status">Status : <span style={{ color: "blue" }}>{doctor.status}</span></div>
+                                            </div>
                                         </div>
                                     )
                                 })}
@@ -160,20 +161,62 @@ export default function SearchPharmacyResult() {
         }
         else if (servicetype == "clinic") {
             return (
-                <><div style={{ fontSize: "40px" }}>Clinic</div></>
+                <>
+                    <div style={{ fontSize: "40px" }}>Clinic</div>
+                    <div className="search-pharmacy-result">
+                        <div className="display-pharmacy-filter"></div>
+                        <div className="pharmacy-result-container">
+                            {/* ----------- --------- ------------item1 of cards of pharma ---------------------------- */}
+
+
+                            <div className="pharmacy-result-item1">
+                                {console.log(data)}
+                                {data.map((clinic) => {
+                                    return (
+                                        <div className="pharmacy-result-card">
+                                            <div className="pharma-logo"><img src={clinic.image} alt="" /></div>
+                                            <div className="pharma-content">
+                                                <div className="pharma-name">{clinic.name}</div>
+                                                <div className="opening-time">Mon - Sat 9:00AM - 12:00PM</div>
+                                                <div className="feature-container">
+                                                    <div className="pharma-feature" id='f1'>Child Specialist</div>
+                                                    <div className="pharma-feature" id='f2'>Vaccination</div>
+                                                    <div className="pharma-feature" id='f3'>Bed for Drip</div>
+                                                </div>
+                                                <div className="offer-view-container">
+                                                    <div className="clinic-status">Status : {clinic.status}</div>
+                                                    <div className="clinic-status">Waiting : 10</div>
+                                                    <div className="view-detail-btn"><Button className="Primary" onClick={()=>navigate("/clinic")}>Book Appointment</Button></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+
+
+                            {/* ----------- --------- ------------item2 of cards of map location ---------------------------- */}
+                            <div className="pharmacy-result-item2">    {data.length > 0 && <img src={map} alt="Map" />}
+                            </div>
+
+                        </div>
+                    </div>
+                </>
             )
         }
     }
 
     return (
         <>
+            <Navigationbar></Navigationbar>
             <div className="search-result-page">
                 <div className="search-field-container">
 
                     <div className="fields" >
                         <div className='search-fields-heading'>select city</div>
                         <Form.Select aria-label="Select Your City" onChange={handlecitychange} style={{ border: "none", textAlign: "center", fontSize: "1.2rem", color: "#086bc7", fontWeight: "bold" }}>
-                            <option value="select your city">select your city</option>
+                            <option value="" >All</option>
                             <option value="Indore">Indore </option>
                             <option value="Ujjain">Ujjain</option>
                             <option value="Jabalpur">Jabalpur</option>
@@ -182,9 +225,9 @@ export default function SearchPharmacyResult() {
                     </div>
 
                     <div className="fields" style={{ borderLeft: "1px solid gainsboro" }}>
-                        <div className='search-fields-heading'>Select Service</div>
+                        <div className='search-fields-heading'>Select Hospital, Clinic, Doctor , Pharmacy </div>
                         <Form.Select aria-label="Select Service needed" onChange={handleservicetypechange} style={{ border: "none", textAlign: "center", fontSize: "1.2rem", color: "#086bc7", fontWeight: "bold" }}>
-                            <option>Select Service Needed</option>
+                            <option value="">Select Service Needed</option>
                             <option value="pharmacy">Pharmacy</option>
                             <option value="clinic">Clinic</option>
                             <option value="hospital">Hospital</option>
@@ -202,6 +245,8 @@ export default function SearchPharmacyResult() {
             </div>
             {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
             {searchResultRender()}
+
+         
         </>
     )
 }

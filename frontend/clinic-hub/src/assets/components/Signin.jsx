@@ -2,7 +2,7 @@ import React from 'react'
 import signupimage from "../img/signup.png"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-
+import Navigationbar from './Navigationbar';
 import f1 from "../img/feature1-doctor.avif"
 import f2 from "../img/feature2-hospital.avif"
 import f3 from "../img/feature3-homepng.png"
@@ -16,8 +16,8 @@ import "./Homepage1.css"
 export default function Signin() {
     return (
         <>
+            <Navigationbar></Navigationbar>
             <div className="signup-container">
-
                 {/* -----------------------item1------------------------- */}
                 <div className="signup-item1">
                     <div className="signup-l1">The Next Generation</div>
