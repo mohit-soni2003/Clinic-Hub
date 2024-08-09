@@ -7,9 +7,11 @@ import f3 from "../img/feature3-homepng.png"
 import f4 from "../img/feature4-ladynurse.png"
 import f5 from "../img/feature5-records.png"
 import { Form, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom'
 
 
 export default function Homepage1() {
+  const navigate = useNavigate()
   return (
     <>
       <div className="home-page-1">
@@ -38,7 +40,7 @@ export default function Homepage1() {
                 className="mx-2"
                 style={{height:"50px" , width:"300px"}}
               />
-              <Button variant="primary" type="submit" style={{height:"50px" , width:"200px"}}>
+              <Button onClick={()=>navigate("/search")} variant="primary" type="submit" style={{height:"50px" , width:"200px"}}>
                 Search For Result
               </Button>
             </Form>
