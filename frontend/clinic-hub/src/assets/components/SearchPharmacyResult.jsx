@@ -35,15 +35,15 @@ export default function SearchPharmacyResult() {
     // ----------------------post data to server to search -------------------
 
     const searchpost = () => {
-        // fetch("http://localhost:5000/search", {
-            fetch("https://clinic-hub-server.vercel.app/search", {
+        fetch("http://localhost:5000/search", {
+            // fetch("https://clinic-hub-server.vercel.app/search", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 name: name,
-                serviceType: servicetype,
+                serviceType: servicetype, 
                 city: city
             })
         })
@@ -99,8 +99,7 @@ export default function SearchPharmacyResult() {
 
 
                             {/* ----------- --------- ------------item2 of cards of map location ---------------------------- */}
-                            <div className="pharmacy-result-item2">    {data.length > 0 && <img src={map} alt="Map" />}
-                            </div>
+                            <div className="pharmacy-result-item2 " id='map'> </div>
 
                         </div>
                     </div>
@@ -146,8 +145,7 @@ export default function SearchPharmacyResult() {
 
 
                             {/* ----------- --------- ------------item2 of cards of map location ---------------------------- */}
-                            <div className="pharmacy-result-item2">{data.length > 0 && <img src={map} alt="Map" />}
-                            </div>
+                            <div className="pharmacy-result-item2 " id='map'> </div>
 
                         </div>
                     </div>
@@ -197,8 +195,7 @@ export default function SearchPharmacyResult() {
 
 
                             {/* ----------- --------- ------------item2 of cards of map location ---------------------------- */}
-                            <div className="pharmacy-result-item2">    {data.length > 0 && <img src={map} alt="Map" />}
-                            </div>
+                            <div className="pharmacy-result-item2 " id='map'> </div>
 
                         </div>
                     </div>
@@ -206,6 +203,36 @@ export default function SearchPharmacyResult() {
             )
         }
     }
+
+    // ------------------------MAP RENDERER FOR RESULT ------------------------
+    useEffect(() => {
+        // Create a script element
+        const script = document.createElement('script');
+        script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBvTKOYb7g0JTCXMceunRr8I2YDv7tmwes&callback=initMap&libraries=places";
+        script.async = true;
+        script.defer = true;
+        document.body.appendChild(script);
+
+        // Define the initMap function globally
+        window.initMap = () => {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 22.683, lng: 76.818 },
+                zoom: 8,
+            });
+
+            const marker = new google.maps.Marker({
+                position: { lat: 22.683, lng: 76.818 },
+                title: "This is test marker",
+                map: map,
+            });
+        };
+
+        // Cleanup script element on component unmount
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, [data]);
+    
 
     return (
         <>
