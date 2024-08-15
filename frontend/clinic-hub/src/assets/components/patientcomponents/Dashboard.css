@@ -1,0 +1,55 @@
+#patient-dashboard{
+    display: flex;
+    flex-direction: column;
+}
+.dashboard-name{
+    font-size: 2rem;
+    border-bottom: 1px solid rgb(232, 232, 232);
+}
+
+.patient-dashboard-row2{
+    border: 1px solid red;
+    display:flex ;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.health-records{
+    border: 1px solid rgb(228, 228, 228);
+    min-width: 350px;
+}
+/* ---------------Favourities Card -------------- */
+.book-appointment{
+    border: 1px solid rgb(229, 229, 229);
+}
+.pat-das-book-appointment{
+border: 1px solid gainsboro;
+display: flex;    
+flex-direction: column;
+align-items: center;
+width: 30%;
+min-width: 300px;
+flex-wrap: wrap;
+
+}
+.p-dashboard-fovourites{
+    display: flex;
+    justify-content: space-around;
+    border: 0px solid red;
+    border-bottom: 2px solid gainsboro;
+    width: 100%;
+    padding: 3% 0px;
+}
+.p-d-card{
+    border: 1px solid gray;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.p-d-card img{
+    width: 50px;
+    height: 50px;
+    background-color: antiquewhite;
+    border-radius: 50%;
+    margin: 3% 2%;
+}

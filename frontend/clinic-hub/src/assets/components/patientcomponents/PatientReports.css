@@ -1,0 +1,62 @@
+.patient-report-r3{
+    border: 1px solid red;
+}
+/* -------------------header---------------------------- */
+.dashboard-header h3{
+    margin: auto 0px;
+}
+.dashboard-patient-select img {
+    width:30px;
+    background-color: antiquewhite;
+    border-radius: 50%;
+    
+}
+.dashboard-patient-select{
+    border:1px solid gainsboro;
+    display: block;
+    display:flex ;
+    align-items: center;
+
+}
+.dashboard-patient-select h6{
+    margin: auto 6px;
+
+}
+/* -----------------row 2 filter------------------------- */
+.pat-das-select{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2% 0%;
+}
+.pat-das-option{
+    display: inline;
+    font-size: 1.2rem;
+    border: 1px solid gainsboro;
+    padding: 3px 2%;
+    margin-left:3% ;
+    border-radius: 5px;
+}
+/* -------------all css of table ------------ */
+.pat-das-list table{
+    width: 100%;
+}
+.pat-das-list th{
+    border: 1px solid gainsboro;
+    font-size: 1rem;
+    padding: 1% 1%;
+}
+.pat-das-list td{
+    border: 1px solid gainsboro;
+    font-size: 1rem;
+    padding: 1% 1%;
+}
+.pd-das-status{
+    color: beige;
+    background-color: green;
+    width: max-content;
+    padding: 2px 8px;
+    border-radius: 5px;
+
+
+}

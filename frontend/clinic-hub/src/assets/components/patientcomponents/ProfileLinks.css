@@ -1,0 +1,40 @@
+.patient-profile-container{
+    border: 0px solid rgb(105, 128, 0);
+    margin: 2%;
+}
+.patient-profile{
+    border: 0px solid red;
+    border-bottom: 2px solid rgb(228, 228, 228);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.patient-profile-image{
+    width: 100%;
+    padding: 4% 0px 5% 0px;
+}
+.patient-profile-image img{
+    background-color: beige;
+    width: 110px ;
+    height: 110px ;
+    border-radius: 50%;
+    margin: auto ;
+    display: block;
+}
+.patient-profile-name{
+    font-weight: 600;
+    margin: 3px 2px;
+}
+.patient-profile-gender{
+    margin: 0px 0px 5% 0px;
+}
+.dashboard-links-container{
+    border: 0px solid gold;
+    padding: 5% 5%;
+}
+.patient-profile-links{
+    font-size: 1.1rem;
+    margin: 12px 0px;
+    
+}
