@@ -6,8 +6,6 @@ import profile from "../../img/image.png"
 export default function PatientReports() {
 
     const [tableRenderer, settableRenderer] = useState();
-
-
     const table = () => {
         if (tableRenderer == 1) {
             document.getElementById("pt-das1").style.backgroundColor = "cyan";
@@ -166,11 +164,13 @@ export default function PatientReports() {
            )
         }
         else {
-            return "No Data Available";
+            return "Please Select Appointment , Priscription and Invoices Which You Want to View ";
         }
-    }
-    useEffect(() => {
-        table();
+
+
+}
+useEffect(() => {
+    table();
     }, [tableRenderer])
 
 
