@@ -9,7 +9,7 @@
 
 .pharmacy-result-item1 {
     width: 55%;
-    border: 0px solid rgb(0, 0, 0);
+    border: 0px solid gainsboro;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,7 +21,7 @@
     width: 40%;
     min-width:450px;
     height: 80vh;
-    border: 1px solid rgb(47, 203, 255);
+    border: 0px solid rgb(47, 203, 255);
     padding: 1%;
 }
 /* ---------------item1------------------------------------- */

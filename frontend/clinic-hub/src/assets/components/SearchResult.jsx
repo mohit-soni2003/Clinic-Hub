@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react'
 import Navigationbar from './Navigationbar';
 import Button from 'react-bootstrap/Button';
-import "./SearchPharmacyResult.css"
+import "./SearchResult.css"
 import logo from "../img/logo.png"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import image from "../img/image.png"
@@ -12,9 +12,8 @@ import "./Searchcontainer.css"
 import "./Searchcontainer.css"
 import { useNavigate } from "react-router-dom"
 
-export default function SearchPharmacyResult() {
+export default function SearchResult() {
     const navigate = useNavigate()
-    //--------this is search container -----------------
     // -------------handle search variable and onchange function------------
     const [city, setcity] = useState()
     const [servicetype, setservicetype] = useState()
@@ -32,6 +31,9 @@ export default function SearchPharmacyResult() {
         console.log(event.target.value)
         setname(event.target.value)
     }
+    // ---------------------map Related Variable--------------------------------
+    const [latitude, setlatitude] = useState()
+    const [longitude, setlongitude] = useState()
     // ----------------------post data to server to search -------------------
 
     const searchpost = () => {
@@ -43,7 +45,7 @@ export default function SearchPharmacyResult() {
             },
             body: JSON.stringify({
                 name: name,
-                serviceType: servicetype, 
+                serviceType: servicetype,
                 city: city
             })
         })
@@ -65,7 +67,7 @@ export default function SearchPharmacyResult() {
         if (servicetype == "pharmacy") {
             return (
                 <>
-                    <div style={{ fontSize: "40px" }}>Pharmacy</div>
+                    <div style={{ fontSize: "40px", textAlign: "center", borderBottom: "1px solid gainsboro", color: "gray", padding: "1%" ,marginBottom:"2%" }}>Pharmacy</div>
                     <div className="search-pharmacy-result">
                         <div className="display-pharmacy-filter"></div>
                         <div className="pharmacy-result-container">
@@ -107,9 +109,10 @@ export default function SearchPharmacyResult() {
             )
         }
         else if (servicetype == "doctor") {
+
             return (
                 <>
-                    <div style={{ fontSize: "40px" }}>Doctor</div>
+                    <div style={{ fontSize: "40px", textAlign: "center", borderBottom: "1px solid gainsboro", color: "gray",marginBottom:"2%", padding: "1%" }}>Doctor</div>
                     <div className="search-pharmacy-result">
                         <div className="display-pharmacy-filter"></div>
                         <div className="pharmacy-result-container">
@@ -153,14 +156,18 @@ export default function SearchPharmacyResult() {
             )
         }
         else if (servicetype == "hospital") {
+
             return (
-                <><div style={{ fontSize: "40px" }}>Hospital</div></>
+                <div style={{ fontSize: "40px", textAlign: "center", borderBottom: "1px solid gainsboro", color: "gray",marginBottom:"2%", padding: "1%" }}>Hospital</div>
             )
         }
         else if (servicetype == "clinic") {
+
+
             return (
                 <>
-                    <div style={{ fontSize: "40px" }}>Clinic</div>
+                    <div style={{ fontSize: "40px", textAlign: "center", borderBottom: "1px solid gainsboro", color: "gray", marginBottom:"2%", padding: "1%" }}>Clinic</div>
+
                     <div className="search-pharmacy-result">
                         <div className="display-pharmacy-filter"></div>
                         <div className="pharmacy-result-container">
@@ -184,7 +191,7 @@ export default function SearchPharmacyResult() {
                                                 <div className="offer-view-container">
                                                     <div className="clinic-status">Status : {clinic.status}</div>
                                                     <div className="clinic-status">Waiting : 10</div>
-                                                    <div className="view-detail-btn"><Button className="Primary" onClick={()=>navigate("/clinic")}>Book Appointment</Button></div>
+                                                    <div className="view-detail-btn"><Button className="Primary" onClick={() => navigate("/clinic")}>Book Appointment</Button></div>
                                                 </div>
 
                                             </div>
@@ -204,6 +211,21 @@ export default function SearchPharmacyResult() {
         }
     }
 
+// ---------------------Location Access Of Person -----------------------------
+useEffect(() => {
+  const result = navigator.geolocation.getCurrentPosition(
+    (location)=>{
+        console.log(`lattitude : ${location.coords.latitude}`)
+        console.log(`longitude : ${location.coords.longitude}`)
+        setlatitude(location.coords.latitude)
+        setlongitude(location.coords.longitude)
+    },
+        ()=>{
+           console.log("Location access permission Denied") 
+        })
+}, [])
+
+
     // ------------------------MAP RENDERER FOR RESULT ------------------------
     useEffect(() => {
         // Create a script element
@@ -216,13 +238,18 @@ export default function SearchPharmacyResult() {
         // Define the initMap function globally
         window.initMap = () => {
             const map = new google.maps.Map(document.getElementById("map"), {
-                center: { lat: 22.683, lng: 76.818 },
-                zoom: 8,
+                center: { lat: latitude, lng: longitude },
+                zoom: 15,
             });
 
             const marker = new google.maps.Marker({
-                position: { lat: 22.683, lng: 76.818 },
-                title: "This is test marker",
+                position: { lat: latitude, lng: longitude },
+                title: "This is your location",
+                map: map,
+            });
+                 new google.maps.Marker({
+                position: { lat: 25, lng:45  },
+                title: "This is test marker2",
                 map: map,
             });
         };
@@ -232,48 +259,52 @@ export default function SearchPharmacyResult() {
             document.body.removeChild(script);
         };
     }, [data]);
-    
+
 
     return (
         <>
             <Navigationbar></Navigationbar>
             <div className="search-result-page">
+                {/* --------------new search field ----------------- */}
                 <div className="search-field-container">
+                    <div className="search-container">
+                        <div className="search-container-item">
+                            <h6>select</h6>
+                            <Form.Select aria-label="Select Your City" onChange={handlecitychange} style={{ border: "none", textAlign: "center", fontSize: "1.2rem", color: "#086bc7", fontWeight: "600" }}>
+                                <option value="" >All</option>
+                                <option value="Indore">Indore </option>
+                                <option value="Ujjain">Ujjain</option>
+                                <option value="Jabalpur">Jabalpur</option>
+                                <option value="Bhopal">Bhopal</option>
+                            </Form.Select>
 
-                    <div className="fields" >
-                        <div className='search-fields-heading'>select city</div>
-                        <Form.Select aria-label="Select Your City" onChange={handlecitychange} style={{ border: "none", textAlign: "center", fontSize: "1.2rem", color: "#086bc7", fontWeight: "bold" }}>
-                            <option value="" >All</option>
-                            <option value="Indore">Indore </option>
-                            <option value="Ujjain">Ujjain</option>
-                            <option value="Jabalpur">Jabalpur</option>
-                            <option value="Bhopal">Bhopal</option>
-                        </Form.Select>
-                    </div>
+                        </div>
+                        <div className="search-container-item">
+                            <h6>search hospital, clinic , doctor</h6>
+                            <Form.Select aria-label="Select Service needed" onChange={handleservicetypechange} style={{ border: "none", textAlign: "center", fontSize: "1.2rem", color: "#086bc7", fontWeight: "600" }}>
+                                <option value="">Select Service Needed</option>
+                                <option value="pharmacy">Pharmacy</option>
+                                <option value="clinic">Clinic</option>
+                                <option value="hospital">Hospital</option>
+                                <option value="doctor">Doctor</option>
+                            </Form.Select>
+                        </div>
+                        <div className="search-container-item">
+                            <h6>Search name of doctor , clinic </h6>
+                            <Form.Control onChange={handlenamechange} type="text" placeholder="Enter Name" style={{ border: "none", textAlign: "center", fontSize: "1.2rem", color: "#086bc7", fontWeight: "400" }} />
 
-                    <div className="fields" style={{ borderLeft: "1px solid gainsboro" }}>
-                        <div className='search-fields-heading'>Select Hospital, Clinic, Doctor , Pharmacy </div>
-                        <Form.Select aria-label="Select Service needed" onChange={handleservicetypechange} style={{ border: "none", textAlign: "center", fontSize: "1.2rem", color: "#086bc7", fontWeight: "bold" }}>
-                            <option value="">Select Service Needed</option>
-                            <option value="pharmacy">Pharmacy</option>
-                            <option value="clinic">Clinic</option>
-                            <option value="hospital">Hospital</option>
-                            <option value="doctor">Doctor</option>
-                        </Form.Select>
-                    </div>
-                    <div className="fields" style={{ borderLeft: "1px solid gainsboro" }}>
-                        <div className='search-fields-heading'> Search doctor, Clinic and hospital</div>
-                        <Form.Control onChange={handlenamechange} type="text" placeholder="Select doctor,hospital,clinic" style={{ border: "none", textAlign: "center", fontSize: "1.2rem", color: "#086bc7", fontWeight: "500" }} />
-                    </div>
-                    <div className="temp1">
-                        <Button variant="primary" onClick={() => { searchpost() }}>Search</Button>
+                        </div>
+                        <div className="search-container-item">
+                            <Button variant="primary" onClick={() => { searchpost() }}>Search</Button>
+
+                        </div>
                     </div>
                 </div>
             </div>
             {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
-            {searchResultRender()}
+                {searchResultRender()}
 
-         
+
         </>
     )
 }

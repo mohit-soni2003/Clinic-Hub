@@ -1,0 +1,11 @@
+.temp{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: black;
+}
+.temp > div a{
+    color:red;
+    font-size: 0.9rem;
+}
+

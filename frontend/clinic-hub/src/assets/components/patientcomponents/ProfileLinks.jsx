@@ -12,13 +12,13 @@ export default function ProfileLinks() {
             </div>
             <div className="dashboard-links-container">
                 <div className="patient-profile-links"><Link to="/">Dashboard</Link></div>
-                <div className="patient-profile-links"><Link to="./patientmyappoint">My Appointments</Link></div>
+                <div className="patient-profile-links"><Link to="/patientmyappoint">My Appointments</Link></div>
                 <div className="patient-profile-links"><Link>Favourites</Link></div>
                 <div className="patient-profile-links"><Link>Dependants</Link></div>
                 <div className="patient-profile-links"><Link>Add Medical Records</Link></div>
                 <div className="patient-profile-links"><Link>Accounts</Link></div>
                 <div className="patient-profile-links"><Link>Invoices</Link></div>
-                <div className="patient-profile-links"><Link to="./PatientProfileUpdate">Profile Setting</Link></div>
+                <div className="patient-profile-links"><Link to="/PatientProfileUpdate">Profile Setting</Link></div>
                 <div className="patient-profile-links"><Link>Medical Details</Link></div>
                 <div className="patient-profile-links"><Link to="/PatientPassReset">Change Password</Link></div>
                 <div className="patient-profile-links"><Link>Logout</Link></div>

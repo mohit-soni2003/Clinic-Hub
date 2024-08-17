@@ -83,6 +83,7 @@ export default function Searchcontainer() {
                         <Button variant="primary" onClick={()=>{searchpost()}}>Search</Button>
                     </div>
                 </div>
+              
             </div>
         </>
     )
