@@ -3,8 +3,8 @@
 }
 
 .service img{
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
 }
 td {
  border: none;
@@ -14,17 +14,22 @@ tr{
 }
 .service{
     margin: 10px;
-    background-color: rgb(222, 242, 255);
-    border-radius: 20px;
+    background-color: rgb(240, 249, 255);
+    border-radius: 15px;
     width: 13vw;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding-top: 15px;
+}
+.hm2-dark{
+    background-color: rgba(219, 238, 253, 0.916);
 }
 .service-name{
-    font-weight: bold;
+    font-weight: 500;
     padding: 5% 0px;
+    text-align: center;
 }
 .special-service{
     border: 0px solid red;

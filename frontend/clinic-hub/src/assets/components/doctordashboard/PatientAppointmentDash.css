@@ -1,0 +1,80 @@
+.das-col-pat-req{
+    min-width: 250px;
+    grid-column: 2/4;
+}
+.das-col-pat-req{
+    padding: 2% 3%;
+}
+
+.dr-das-r1{
+    display: flex;
+    padding-bottom:1%;
+    align-items: center;
+    border-bottom: 2px solid rgba(220, 220, 220, 0.721);
+    justify-content: space-between;
+}
+.dr-das-r1 select{
+    padding: 2px 7px;
+    border: 1px solid rgb(22, 115, 202);
+    border-radius: 5px;
+}
+/* --------------card ss ------------- */
+.dr-das-pat-req-card{
+    border: 0px solid red;
+    box-shadow: 1px 1px 7px 7px rgba(230, 230, 230, 0.425);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 10px 10px;
+    margin: 3% 0px;
+
+}
+.dr-das-pat-req-card img{
+    height: 80px;    
+    background-color: antiquewhite;
+    border-radius: 10px;
+}
+
+
+.pat-req-profile{
+    display: flex;
+    align-items: center;
+}
+.pat-req-name{
+    font-size: 1.2rem;
+    margin-left: 10px;
+    font-weight: 400;
+}
+
+.pat-consult-details{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+/* --------Buttons---------- */
+
+.pat-req-btn-container{
+    display: flex;
+    align-items: center;
+}
+.pat-req-btn{
+    margin: 0px 10px;
+    padding: 2px 13px;
+    color: white;
+    border-radius: 5px;
+
+}
+#pat-req-btn1{
+    background-color: rgb(9, 138, 0);
+}
+#pat-req-btn1:hover{
+    background-color: rgb(11, 171, 0);
+}
+#pat-req-btn2{
+    background-color: rgb(194, 0, 0);
+}
+#pat-req-btn2:hover{
+    background-color: rgb(255, 42, 42);
+}

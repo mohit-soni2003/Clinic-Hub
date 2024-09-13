@@ -3,6 +3,16 @@ import "./Homepage2.css"
 import temp from "../img/feature4-ladynurse.png"
 import Button from 'react-bootstrap/Button';
 
+import hospital from "../img/hospital.png"
+import records from "../img/feature5-records.png"
+import nurse from "../img/nurse.png"
+import doctor from "../img/doctor.png"
+import labscan from "../img/labscan.png"
+import labtest from "../img/labtest.png"
+import medicine from "../img/medicine.png"
+import homevisit from "../img/homevisit.png"
+import doorstep from "../img/doorstep.png"
+
 
 export default function Homepage2() {
     return (
@@ -29,15 +39,15 @@ export default function Homepage2() {
                                     </div>
                             </td>
                             <td >
-                                <div className="service">
-                                    <img src={temp} alt="" />
-                                    <div className="service-name">Book Ambulance</div>
+                                <div className="service hm2-dark">
+                                    <img src={doorstep} alt="" />
+                                    <div className="service-name">Door Step Service</div>
                                 </div>
                             </td>
                             <td >
                                 <div className="service">
-                                    <img src={temp} alt="" />
-                                    <div className="service-name">Book Ambulance</div>
+                                    <img src={nurse} alt="" />
+                                    <div className="service-name">Video Consult</div>
                                 </div>
                             </td>
 
@@ -47,21 +57,21 @@ export default function Homepage2() {
                         <tr>
                             <td></td>
                             <td >
-                                <div className="service">
-                                    <img src={temp} alt="" />
-                                    <div className="service-name">Book Ambulance</div>
+                                <div className="service hm2-dark">
+                                    <img src={doctor} alt="" />
+                                    <div className="service-name">Search Doctor</div>
                                 </div>
                             </td>
                             <td >
                                 <div className="service">
-                                    <img src={temp} alt="" />
-                                    <div className="service-name">Book Ambulance</div>
+                                    <img src={hospital} alt="" />
+                                    <div className="service-name">Search Clinic</div>
                                 </div>
                             </td>
                             <td >
-                                <div className="service">
-                                    <img src={temp} alt="" />
-                                    <div className="service-name">Book Ambulance</div>
+                                <div className="service hm2-dark">
+                                    <img src={homevisit} alt="" />
+                                    <div className="service-name">Home Visits</div>
                                 </div>
                             </td>
 
@@ -70,27 +80,27 @@ export default function Homepage2() {
                         {/* TABLE ROW 4--------- ----------- ------------ ----------- */}
                         <tr>
                             <td >
-                                <div className="service">
-                                    <img src={temp} alt="" />
-                                    <div className="service-name">Book Ambulance</div>
+                                <div className="service hm2-dark">
+                                    <img src={medicine} alt="" />
+                                    <div className="service-name">Buy Medicines</div>
                                 </div>
                             </td>
                             <td >
                                 <div className="service">
-                                    <img src={temp} alt="" />
-                                    <div className="service-name">Book Ambulance</div>
+                                    <img src={labscan} alt="" />
+                                    <div className="service-name">Book Scan Test</div>
+                                </div>
+                            </td>
+                            <td >
+                                <div className="service hm2-dark">
+                                    <img src={labtest} alt="" />
+                                    <div className="service-name">Book Lab Test</div>
                                 </div>
                             </td>
                             <td >
                                 <div className="service">
-                                    <img src={temp} alt="" />
-                                    <div className="service-name">Book Ambulance</div>
-                                </div>
-                            </td>
-                            <td >
-                                <div className="service">
-                                    <img src={temp} alt="" />
-                                    <div className="service-name">Book Ambulance</div>
+                                    <img src={records} alt="" />
+                                    <div className="service-name">Track Medical Record</div>
                                 </div>
                             </td>
 

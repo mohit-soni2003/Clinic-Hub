@@ -3,13 +3,13 @@ import "./DoctorDashboard.css"
 import image from "../../img/image.png"
 import Button from 'react-bootstrap/Button';
 
-import ProfileLinks from './individualcomponent/DashboardLinks'
+import DsshboardLinks from './individualcomponent/DashboardLinks'
 
 export default function DoctorDashboard() {
     return (
         <div className='dr-das grid-container'>
             <div className="das-col1">
-                <ProfileLinks></ProfileLinks>
+                <DsshboardLinks></DsshboardLinks>
             </div>
             <div className="das-col2">
                 <div>

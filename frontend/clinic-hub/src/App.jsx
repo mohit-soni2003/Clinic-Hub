@@ -1,8 +1,7 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import Navigationbar from './assets/components/Navigationbar';
 import Footer from './assets/components/Footer';
 import HomePage from './assets/components/HomePage';
@@ -20,12 +19,13 @@ import PatientPassReset from "./assets/components/patientcomponents/PatientPassR
 // -----------------------Doctor Dashboard ---------------------
 
 import DoctorDashboard from "./assets/components/doctordashboard/DoctorDashboard"
+import PatientAppointmentDash from "./assets/components/doctordashboard/PatientAppointmentDash"
+import DoctorAvailablity from "./assets/components/doctordashboard/DoctorAvailablity"
 import Temp from "./assets/components/Temp"
 function App() {
     return (
         <>
         <BrowserRouter>
-            <Temp></Temp>
         <Routes>
             <Route path="/" element={<HomePage />}></Route>
             <Route path="/signin" element={<Signin />}></Route>
@@ -39,31 +39,15 @@ function App() {
             <Route path="/PatientPassReset" element={<PatientPassReset/>}></Route>
             {/* ---------------------DOCTOR DASHBOARD-------------------- */}
             <Route path="/DoctorDashboard" element={<DoctorDashboard/>}></Route>
+            <Route path="/patientrequest" element={<PatientAppointmentDash/>}></Route>
+            <Route path="/doctoravailablityupdate" element={<DoctorAvailablity/>}></Route>
+        
 
         </Routes>
-        {/* <Patient></Patient> */}
-        {/* <DoctorDashboard></DoctorDashboard> */}
+            <ToastContainer theme='light'></ToastContainer>
         </BrowserRouter>
+
         <Footer></Footer>
-            {/* <Navigationbar></Navigationbar>
-            <div className="home-page"><HomePage></HomePage>
-            </div>
-            <Navigationbar></Navigationbar>
-            <div className="temp-display" style={{border : "0px solid red"}}>
-                <Signup></Signup>
-            </div>
-            <Navigationbar></Navigationbar>
-            <div className="temp-display" style={{border : "0px solid red"}}>
-                <Signin></Signin>
-            </div>
-            <Navigationbar></Navigationbar>
-            <div className="temp-display" style={{border : "0px solid red"}}>
-                <Doctor></Doctor>
-            </div>
-            <Navigationbar></Navigationbar>
-            <div className="temp-display" style={{border : "0px solid red"}}>
-            <SearchPharmacyResult></SearchPharmacyResult>
-            </div> */}
 
         </>
     )

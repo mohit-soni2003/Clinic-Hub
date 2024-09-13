@@ -41,14 +41,14 @@
     margin: 10px;
 }
 .home-page-feature img{
-    border: 2px solid rgb(0, 117, 226);
+    border: 2px solid rgba(0, 166, 226, 0.409);
     border-radius: 20px;
     height: 100px;
     width: 100px;
 }
 
 .hm-pg-feature-name{
-    font-weight: bold;
+    font-weight: 500;
 }
 
 
