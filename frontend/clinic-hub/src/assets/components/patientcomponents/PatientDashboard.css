@@ -6,15 +6,15 @@
     justify-content:center;
 }
 .patient-dashboard-profile{
-    border: 1px solid gainsboro;
+    border: 0px solid gainsboro;
     background-color: white;
-    width: 18%;
+    width: 21%;
     height: 100vh;
-    margin: 1% 1%;
+    margin: 2% 1%;
 }
 .patient-dashboard-details{
     border: 1px solid gainsboro;
     width: 70%;
     background-color: white;
-    margin: 1% 1%;
+    margin: 2% 1%;
 }

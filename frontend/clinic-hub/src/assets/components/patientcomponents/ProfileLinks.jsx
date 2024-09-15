@@ -1,14 +1,14 @@
 import React from 'react';
 import './ProfileLinks.css'; // Import your CSS file
-import profile from "../../img/image.png" 
+import user1 from "../../img/user1.jpg" 
 import {Link} from "react-router-dom"
-export default function ProfileLinks() {
+export default function ProfileLinks() { 
     return (
         <div className="patient-profile-container">
             <div className="patient-profile">
-                <div className="patient-profile-image"><img src={profile} alt="" /></div>
-                <div className="patient-profile-name">Nidhi Agnihotri</div>
-                <div className="patient-profile-gender">Female 22 Years 1 months </div>
+                <div className="patient-profile-image"><img src={user1} alt="" /></div>
+                <div className="patient-profile-name">Dilip Soni</div>
+                <div className="patient-profile-gender">Male 22 Years 1 months </div>
             </div>
             <div className="dashboard-links-container">
                 <div className="patient-profile-links"><Link to="/">Dashboard</Link></div>

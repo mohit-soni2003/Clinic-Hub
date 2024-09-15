@@ -22,7 +22,7 @@ export default function DashboardLinks() {
             <div className="dashboard-links-container">
                 <div className="patient-profile-links"><Link to="/DoctorDashboard">Dashboard</Link></div>
                 <div className="patient-profile-links"><Link to="/patientrequest">Requests</Link></div>
-                <div className="patient-profile-links"><Link>Appointments</Link></div>
+                <div className="patient-profile-links"><Link to="/drappointment">Appointments</Link></div>
                 <div className="patient-profile-links"><Link to="/doctoravailablityupdate">Available Timings</Link></div>
                 <div className="patient-profile-links"><Link>My Patients</Link></div>
                 <div className="patient-profile-links"><Link>Specialities And Services</Link></div>

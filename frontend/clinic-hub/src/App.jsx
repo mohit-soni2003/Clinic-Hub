@@ -21,11 +21,13 @@ import PatientPassReset from "./assets/components/patientcomponents/PatientPassR
 import DoctorDashboard from "./assets/components/doctordashboard/DoctorDashboard"
 import PatientAppointmentDash from "./assets/components/doctordashboard/PatientAppointmentDash"
 import DoctorAvailablity from "./assets/components/doctordashboard/DoctorAvailablity"
+import Appointment from "./assets/components/doctordashboard/Appointment"
 import Temp from "./assets/components/Temp"
 function App() {
     return (
         <>
         <BrowserRouter>
+        <Temp></Temp>
         <Routes>
             <Route path="/" element={<HomePage />}></Route>
             <Route path="/signin" element={<Signin />}></Route>
@@ -41,6 +43,7 @@ function App() {
             <Route path="/DoctorDashboard" element={<DoctorDashboard/>}></Route>
             <Route path="/patientrequest" element={<PatientAppointmentDash/>}></Route>
             <Route path="/doctoravailablityupdate" element={<DoctorAvailablity/>}></Route>
+            <Route path="/drappointment" element={<Appointment/>}></Route>
         
 
         </Routes>

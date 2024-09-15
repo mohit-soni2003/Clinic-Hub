@@ -8,7 +8,7 @@
 }
 
 .grid-container >div{
-    border: 2px solid rgba(220, 220, 220, 0.84);
+    border: 1px solid rgba(220, 220, 220, 0.84);
 }
 /* profile Links */
 .das-col1{ 
@@ -20,13 +20,16 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    border:none;
 }
 .das-col2 >div{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid rgb(249, 0, 0);
-    margin: 3% 0px;
+    border: 0px solid rgb(249, 0, 0);
+    box-shadow: 1px 1px 10px  gainsboro;
+    margin-bottom: 3%;
+    padding: 2% 3%
 }
 .das-col2 h5{
     color: gray;
@@ -34,11 +37,14 @@
 .das-col2 >div img{
     height: 80px ;
     width: 80px ;
-    border: 2px solid gainsboro;
+    border: 0px solid gainsboro;
     margin: 2% 4%;
 }
 /* ----------------------DAS COL 3----------------------- */
-
+.das-col3{
+    padding: 1% 3%;
+    box-shadow: 1px 1px 10px 1px gainsboro;
+}
 .col3-header{
 
     border-bottom:1px solid gainsboro ;
@@ -49,9 +55,13 @@
 }
 .col3-header div{
     margin-right:3%;
-    border: 1px solid gainsboro;
+    border: 1px solid rgb(137, 184, 255);
     padding: 2px 8px;
     border-radius: 5px ;
+    color: rgb(18, 106, 238);
+}
+.col3-header div:hover{
+    background-color: rgb(238, 250, 255);
 }
 
 .dr-app-card{
@@ -61,6 +71,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    margin-top: 1%;
+}
+.dr-app-card:hover{
+    background-color: rgba(244, 244, 244, 0.749);
 }
 .dr-app-card img{
     width: 70px ;
@@ -70,7 +84,7 @@
     border-radius: 10px;
 }
 .pat-name{
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
 .dr-app-date span{
     background-color: rgb(40, 174, 2);
@@ -95,6 +109,7 @@
 /* ------------col 4 ----------------------- */
 .das-col4{
     padding: 10px;
+    box-shadow: 1px 1px 10px 1px gainsboro;
     height: fit-content;
 }
 .das-col4-header{
@@ -116,7 +131,7 @@
 /* ----rectnt patient card--------- */
 
 .recent-pat-card{
-background-color: rgba(246, 246, 246, 0.699);
+background-color: rgba(246, 246, 246, 0.947);
 display: flex;
 align-items: center;
 justify-content: center;
@@ -125,12 +140,14 @@ width: 140px;
 border: 0px solid red;
 margin: 5% 3%;
 padding: 10px 5px;
+text-align: center;
 
 }
 .recent-pat-card img{
     width: 70px;
     height:  70px;
     background-color: antiquewhite;
+    border-radius: 7px;
 
 }
 .recent-pat-card-container{

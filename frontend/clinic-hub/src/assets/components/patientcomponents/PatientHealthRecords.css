@@ -5,40 +5,47 @@
 
 .dashboard-header{
     border:0px solid red;
-    border-bottom: 2px solid gainsboro;
+    border-bottom: 2px solid rgba(229, 229, 229, 0.74);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 3% 2%;
+    padding: 2% 2%;
 }
 .dashboard-header h3{
     margin: auto 0px;
 }
-.dashboard-patient-select img {
-    width:30px;
-    background-color: antiquewhite;
-    border-radius: 50%;
-    
-}
 .dashboard-patient-select{
     border:1px solid gainsboro;
     display: block;
+    padding: 3px 2%;
     display:flex ;
     align-items: center;
-
+    border-radius: 8px;
+}
+.dashboard-patient-select img{
+    width: 30px;
+    background-color: antiquewhite;
+    border-radius: 50%;
+    
 }
 .dashboard-patient-select h6{
     margin: auto 6px;
 
 }
 .patients-medical-readings{
-    border-right: 2px solid gainsboro;
+    border-right: 1px solid gainsboro;
+    margin: 2% 0px;
+    padding: 2% 1%;
 }
+/* ----------------PIE CHARTS------------ */
 .dashboard-pie-chart{
-    border: 3px solid gainsboro;
+    border: 0px solid gainsboro;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     flex-direction: column;
+    margin: 2% 0px;
+    padding: 3% ;
 }
 .chart-circle{
     width: 130px;

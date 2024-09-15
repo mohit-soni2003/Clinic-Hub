@@ -8,7 +8,7 @@ export default function PatientDashboard() {
       <div className="patient-dashboard-profile"><ProfileLinks></ProfileLinks></div>
       <div className="patient-dashboard-details">
         <Dashboard></Dashboard>
-      </div>
+      </div> 
     </div>
   )
 }

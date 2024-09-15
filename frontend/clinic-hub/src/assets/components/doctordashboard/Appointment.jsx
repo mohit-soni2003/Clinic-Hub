@@ -1,8 +1,7 @@
 import React from 'react'
 import "./DoctorDashboard.css"
-import "./DoctorAvailablity.css"
-import image from "../../img/image.png"
-import temp from "../../img/temp/dr-availabletime.png"
+import "./Appointment.css"
+import temp from "../../img/temp/appointments.png"
 
 import DsshboardLinks from './individualcomponent/DashboardLinks'
 

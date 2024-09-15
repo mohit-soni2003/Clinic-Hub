@@ -2,6 +2,8 @@ import React from 'react';
 import { Card, Row, Col, Container, Button, Image } from 'react-bootstrap';
 import profile from "../../img/image.png"
 import "./PatientHealthRecords.css"
+import user1 from "../../img/user1.jpg"
+
 
 export default function PatientHealthRecord() {
     return (
@@ -11,7 +13,7 @@ export default function PatientHealthRecord() {
                 <div className="dashboard-header">
                     <h3>Health Records</h3>
                     <div className="dashboard-patient-select">
-                        <img src={profile} alt="" />
+                        <img src={user1} alt="" />
                         <h6>Mohit Soni</h6>
                     </div>
                 </div>
@@ -73,11 +75,11 @@ export default function PatientHealthRecord() {
                     </div>
                     {/* -------------medical charts-------------- */}
                     <div className="dashboard-pie-chart">
-                            <p style={{fontSize:"1.2rem" , color:"grey"}}>Overall Report</p>
+                            <p style={{fontSize:"1.2rem" , color:"black"}}>Overall Report</p>
                             <div className="chart-circle">
                                    Last Visit 25 Mar 2024
                             </div>
-                            <div className="dashboard-health-status">Your Health is 95% Normal</div>
+                            <div className="dashboard-health-status" style={{textAlign:"center" , margin:"5% 0px"}}>Your Health is 95% Normal</div>
                             <div className="dashboard-btn-view-details">      <Button variant="dark">View Details</Button>
                             </div>
                     </div>

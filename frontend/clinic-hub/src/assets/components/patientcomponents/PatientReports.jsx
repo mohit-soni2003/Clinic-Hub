@@ -2,13 +2,15 @@
 import { React, useState, useEffect } from 'react'
 import "./PatientReports.css"
 import profile from "../../img/image.png"
+import user1 from "../../img/user1.jpg"
+
 
 export default function PatientReports() {
 
     const [tableRenderer, settableRenderer] = useState();
     const table = () => {
         if (tableRenderer == 1) {
-            document.getElementById("pt-das1").style.backgroundColor = "cyan";
+            document.getElementById("pt-das1").style.backgroundColor = "rgb(234, 234, 234)";
             document.getElementById("pt-das2").style.backgroundColor = "white";
             document.getElementById("pt-das4").style.backgroundColor = "white";
             document.getElementById("pt-das3").style.backgroundColor = "white";
@@ -53,7 +55,7 @@ export default function PatientReports() {
         }
         else if (tableRenderer == 2) {
             document.getElementById("pt-das1").style.backgroundColor = "white";
-            document.getElementById("pt-das2").style.backgroundColor = "cyan";
+            document.getElementById("pt-das2").style.backgroundColor = "rgb(234, 234, 234)";
             document.getElementById("pt-das3").style.backgroundColor = "white";
             document.getElementById("pt-das4").style.backgroundColor = "white";
            return(
@@ -90,7 +92,7 @@ export default function PatientReports() {
         else if (tableRenderer == 3) {
             document.getElementById("pt-das1").style.backgroundColor = "white";
             document.getElementById("pt-das2").style.backgroundColor = "white";
-            document.getElementById("pt-das3").style.backgroundColor = "cyan";
+            document.getElementById("pt-das3").style.backgroundColor = "rgb(234, 234, 234)";
             document.getElementById("pt-das4").style.backgroundColor = "white";
            return(
             <table>
@@ -127,7 +129,7 @@ export default function PatientReports() {
             document.getElementById("pt-das1").style.backgroundColor = "white";
             document.getElementById("pt-das2").style.backgroundColor = "white";
             document.getElementById("pt-das3").style.backgroundColor = "white";
-            document.getElementById("pt-das4").style.backgroundColor = "cyan";
+            document.getElementById("pt-das4").style.backgroundColor = "rgb(234, 234, 234)";
            return(
             <table>
             <tr>
@@ -163,7 +165,7 @@ export default function PatientReports() {
         </table>
            )
         }
-        else {
+        else { 
             return "Please Select Appointment , Priscription and Invoices Which You Want to View ";
         }
 
@@ -171,7 +173,7 @@ export default function PatientReports() {
 }
 useEffect(() => {
     table();
-    }, [tableRenderer])
+    }, [tableRenderer]) 
 
 
 
@@ -182,7 +184,7 @@ useEffect(() => {
             <div className="dashboard-header">
                 <h3>Reports</h3>
                 <div className="dashboard-patient-select">
-                    <img src={profile} alt="" />
+                    <img src={user1} alt="" />
                     <h6>Mohit Soni</h6>
                 </div>
             </div>

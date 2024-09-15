@@ -1,6 +1,5 @@
 .patient-profile-container{
-    border: 0px solid rgb(105, 128, 0);
-    margin: 2%;
+padding: 3% 3%;
 }
 .patient-profile{
     border: 0px solid red;

@@ -1,5 +1,8 @@
 .patient-report-r3{
-    border: 1px solid red;
+    margin: 3% 0px;
+    padding: 1% 2%;
+    box-shadow: 2px 2px 10px 1px rgba(220, 220, 220, 0.683);
+    border: 1px solid gainsboro;
 }
 /* -------------------header---------------------------- */
 .dashboard-header h3{
@@ -11,11 +14,11 @@
     border-radius: 50%;
     
 }
-.dashboard-patient-select{
+.dashboard-patient-select{ 
     border:1px solid gainsboro;
-    display: block;
     display:flex ;
     align-items: center;
+    justify-content: flex-start;
 
 }
 .dashboard-patient-select h6{
@@ -34,22 +37,28 @@
     font-size: 1.2rem;
     border: 1px solid gainsboro;
     padding: 3px 2%;
-    margin-left:3% ;
+    margin-right:3% ;
     border-radius: 5px;
+}
+.pat-das-option:hover{
+    background-color: rgb(234, 234, 234);
 }
 /* -------------all css of table ------------ */
 .pat-das-list table{
     width: 100%;
 }
 .pat-das-list th{
-    border: 1px solid gainsboro;
+    border: 1px solid rgba(220, 220, 220, 0.749);
     font-size: 1rem;
     padding: 1% 1%;
 }
 .pat-das-list td{
-    border: 1px solid gainsboro;
+    border: 1px solid rgba(220, 220, 220, 0.765);
     font-size: 1rem;
     padding: 1% 1%;
+}
+tr:hover{
+    background-color: rgba(240, 240, 240, 0.726);
 }
 .pd-das-status{
     color: beige;

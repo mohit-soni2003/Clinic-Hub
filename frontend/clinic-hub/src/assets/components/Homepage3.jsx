@@ -26,37 +26,37 @@ export default function Homepage3() {
                 <div className="home3-image">
                     <img src={s2} alt="" />
                 </div>
-                <div className='card-text'>Book Appointment</div>
+                <div className='card-text'>Lab Testing Services</div>
             </div>
             <div className="home3-card">
                 <div className="home3-image">
                     <img src={s3} alt="" />
                 </div>
-                <div className='card-text'>Book Appointment</div>
+                <div className='card-text'>Medicine <br />Supplies</div>
             </div>
             <div className="home3-card">
                 <div className="home3-image">
                     <img src={s4} alt="" />
                 </div>
-                <div className='card-text'>Book Appointment</div>
+                <div className='card-text'>Search Clinic/Hospital</div>
             </div>
             <div className="home3-card">
                 <div className="home3-image">
                     <img src={s5} alt="" />
                 </div>
-                <div className='card-text'>Book Appointment</div>
+                <div className='card-text'>HealthCare Services</div>
             </div>
             <div className="home3-card">
                 <div className="home3-image">
                     <img src={s7} alt="" />
                 </div>
-                <div className='card-text'>Book Appointment</div>
+                <div className='card-text'>Track Waiting Time</div>
             </div>
             <div className="home3-card">
                 <div className="home3-image">
                     <img src={s6} alt="" />
                 </div>
-                <div className='card-text'>Book Appointment</div>
+                <div className='card-text'>Online Appointment</div>
             </div>
         </div>
     </div>

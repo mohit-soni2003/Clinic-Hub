@@ -9,7 +9,6 @@ import map from "../img/map.png"
 //---------tihs imports for search container-------------
 import Form from 'react-bootstrap/Form';
 import "./Searchcontainer.css"
-import "./Searchcontainer.css"
 import { useNavigate } from "react-router-dom"
 
 export default function SearchResult() {
@@ -67,8 +66,8 @@ export default function SearchResult() {
         if (servicetype == "pharmacy") {
             return (
                 <>
-                    <div style={{ fontSize: "40px", textAlign: "center", borderBottom: "1px solid gainsboro", color: "gray", padding: "1%" ,marginBottom:"2%" }}>Pharmacy</div>
                     <div className="search-pharmacy-result">
+                    <div style={{ fontSize: "40px", textAlign: "center", borderBottom: "1px solid gainsboro", color: "gray", padding: "1%", marginBottom: "2%" }}>Pharmacy</div>
                         <div className="display-pharmacy-filter"></div>
                         <div className="pharmacy-result-container">
                             {/* ----------- --------- ------------item1 of cards of pharma ---------------------------- */}
@@ -89,7 +88,7 @@ export default function SearchResult() {
                                                     <div className="pharma-feature" id='f3'>Instant Delievery</div>
                                                 </div>
                                                 <div className="offer-view-container">
-                                                    <div className="pharma-offer">10%</div>
+                                                    <div className="pharma-offer">10% off</div>
                                                     <div className="view-detail-btn"><Button className="Primary">View Details</Button></div>
                                                 </div>
 
@@ -112,7 +111,7 @@ export default function SearchResult() {
 
             return (
                 <>
-                    <div style={{ fontSize: "40px", textAlign: "center", borderBottom: "1px solid gainsboro", color: "gray",marginBottom:"2%", padding: "1%" }}>Doctor</div>
+                    <div style={{ fontSize: "40px", textAlign: "center", borderBottom: "1px solid gainsboro", color: "gray", marginBottom: "2%", padding: "1%" }}>Doctor</div>
                     <div className="search-pharmacy-result">
                         <div className="display-pharmacy-filter"></div>
                         <div className="pharmacy-result-container">
@@ -131,7 +130,7 @@ export default function SearchResult() {
                                             </div>
                                             <div className="pharma-content">
                                                 <div className="pharma-name">{doctor.name}</div>
-                                                <div className="opening-time">{doctor.qualification}</div>
+                                                <div className="dr-qualification">{doctor.qualification}</div>
                                                 <div className="doctor-speciality" id='f1'>{doctor.speciality}</div>
                                                 <div className="doctor-fees">200$</div>
                                             </div>
@@ -158,7 +157,7 @@ export default function SearchResult() {
         else if (servicetype == "hospital") {
 
             return (
-                <div style={{ fontSize: "40px", textAlign: "center", borderBottom: "1px solid gainsboro", color: "gray",marginBottom:"2%", padding: "1%" }}>Hospital</div>
+                <div style={{ fontSize: "40px", textAlign: "center", borderBottom: "1px solid gainsboro", color: "gray", marginBottom: "2%", padding: "1%" }}>Hospital</div>
             )
         }
         else if (servicetype == "clinic") {
@@ -166,7 +165,7 @@ export default function SearchResult() {
 
             return (
                 <>
-                    <div style={{ fontSize: "40px", textAlign: "center", borderBottom: "1px solid gainsboro", color: "gray", marginBottom:"2%", padding: "1%" }}>Clinic</div>
+                    <div style={{ fontSize: "40px", textAlign: "center", borderBottom: "1px solid gainsboro", color: "gray", marginBottom: "2%", padding: "1%" }}>Clinic</div>
 
                     <div className="search-pharmacy-result">
                         <div className="display-pharmacy-filter"></div>
@@ -189,7 +188,9 @@ export default function SearchResult() {
                                                     <div className="pharma-feature" id='f3'>Bed for Drip</div>
                                                 </div>
                                                 <div className="offer-view-container">
-                                                    <div className="clinic-status">Status : {clinic.status}</div>
+                                                    <div className="clinic-status">
+                                                        Status : <span style={{ color: clinic.status === "Closed" ? "#c70000" : "green" }}>{clinic.status}</span>
+                                                    </div>
                                                     <div className="clinic-status">Waiting : 10</div>
                                                     <div className="view-detail-btn"><Button className="Primary" onClick={() => navigate("/clinic")}>Book Appointment</Button></div>
                                                 </div>
@@ -211,19 +212,19 @@ export default function SearchResult() {
         }
     }
 
-// ---------------------Location Access Of Person -----------------------------
-useEffect(() => {
-  const result = navigator.geolocation.getCurrentPosition(
-    (location)=>{
-        console.log(`lattitude : ${location.coords.latitude}`)
-        console.log(`longitude : ${location.coords.longitude}`)
-        setlatitude(location.coords.latitude)
-        setlongitude(location.coords.longitude)
-    },
-        ()=>{
-           console.log("Location access permission Denied") 
-        })
-}, [])
+    // ---------------------Location Access Of Person -----------------------------
+    useEffect(() => {
+        const result = navigator.geolocation.getCurrentPosition(
+            (location) => {
+                console.log(`lattitude : ${location.coords.latitude}`)
+                console.log(`longitude : ${location.coords.longitude}`)
+                setlatitude(location.coords.latitude)
+                setlongitude(location.coords.longitude)
+            },
+            () => {
+                console.log("Location access permission Denied")
+            })
+    }, [])
 
 
     // ------------------------MAP RENDERER FOR RESULT ------------------------
@@ -247,8 +248,8 @@ useEffect(() => {
                 title: "This is your location",
                 map: map,
             });
-                 new google.maps.Marker({
-                position: { lat: 25, lng:45  },
+            new google.maps.Marker({
+                position: { lat: 25, lng: 45 },
                 title: "This is test marker2",
                 map: map,
             });
@@ -302,7 +303,7 @@ useEffect(() => {
                 </div>
             </div>
             {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
-                {searchResultRender()}
+            {searchResultRender()}
 
 
         </>

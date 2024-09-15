@@ -2,19 +2,24 @@ import React from 'react'
 import "./DoctorDashboard.css"
 import "./PatientAppointmentDash.css"
 import image from "../../img/image.png"
+import user3 from "../../img/user.jpg"
+import user1 from "../../img/user1.jpg"
+import user2 from "../../img/user2.jpg"
+import user4 from "../../img/user4.png"
+import user5 from "../../img/user5.jpg"
 
 import DsshboardLinks from './individualcomponent/DashboardLinks'
 
 export default function PatientAppointmentDash() {
 
-    const patreqcard=()=>{
+    const patreqcard=(user , name)=>{
         return(
             <>
             <div className="dr-das-pat-req-card">
                     {/* -----------profile ---------- */}
                     <div className="pat-req-profile">
-                        <img src={image} alt="" />
-                        <div className="pat-req-name">Mohit Soni</div>
+                        <img src={user} alt="" />
+                        <div className="pat-req-name">{name}</div>
                     </div>
                     {/* ---------Date and consult reason---------- */}
                     <div className="pat-consult-details">
@@ -41,7 +46,7 @@ export default function PatientAppointmentDash() {
         )
     }
     return (
-        <div className='dr-das grid-container'>
+        <div className='dr-das grid-container'> 
             <div className="das-col1">
                 <DsshboardLinks></DsshboardLinks>
             </div>
@@ -61,10 +66,10 @@ export default function PatientAppointmentDash() {
                 {/* --------Requests Card ---------- */}
 
                 <div className="dr-das-pat-req-container">
-                 {patreqcard()}
-                 {patreqcard()}
-                 {patreqcard()}
-                 {patreqcard()}
+                 {patreqcard(user1,"Mohit Soni")}
+                 {patreqcard(user2 ,"Radha Chouhan" )}
+                 {patreqcard(user3 , "Avni Gupta")}
+                 {patreqcard(user4 , "Suni Patel")}
                 </div>
 
             </div>
