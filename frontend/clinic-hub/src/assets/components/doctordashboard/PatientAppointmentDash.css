@@ -1,6 +1,7 @@
 .das-col-pat-req{
     min-width: 250px;
     grid-column: 2/4;
+    grid-row:1/3;
 }
 .das-col-pat-req{
     padding: 2% 3%;
